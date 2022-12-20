@@ -11,3 +11,25 @@ A hodge-podge collection of scripts and configuration. The goal is to have an en
     - [ ] `cd ~/.oh-my-zsh/custom/plugins && git clone git@github.com:zdharma-continuum/history-search-multi-word.git`
 - [ ] Clone this repository: `git clone git@github.com:joshcox/dot-file.git`
 - [ ] Run `make brew-bundle-install` to install commonly used programs
+
+## Other Programs
+- Amethyst - Tiling Manager
+  - [Crash Course](https://www.youtube.com/watch?v=7Z9-Ry4yGNc)
+
+## Executables
+### Create a bin script
+1. Create a text file, `./bin/<script-name>.zsh`
+  ```zsh
+  #!/usr/bin/env zsh
+  echo "Hello world"
+  ```
+2. Save the file
+3. Run the following commands to make the script executable
+  ```zsh
+  sudo chmod -x ./bin/<script-name>.zsh
+  sudo chmod 755 ./bin/<script-name>.zsh
+  ```
+4. `source ~/.zshrc`
+### Scripts
+#### save-brew
+Save the current brew's configuration to the Brewfile

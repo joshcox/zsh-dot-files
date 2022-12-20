@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+cd $DF_HOME;
+brew bundle dump --file=- > ./homebrew/Brewfile;
+diff=$(git diff --word-diff=porcelain --unified=0 ./homebrew/Brewfile | grep '^[+-]' | grep -Ev '^(--- a/|\+\+\+ b/)')
+
+read -d '' commitMessage << EOF
+Saving Brewfile
+$diff
+EOF
+
+echo "$commitMessage"
+
+git add ./homebrew/Brewfile;
+git commit -m "$commitMessage";
+git push;
